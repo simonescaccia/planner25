@@ -86,10 +86,10 @@ It accepts the same arguments as the `fast-downward.py` script (see above).
     apptainer pull scorpion.sif oras://ghcr.io/jendrikseipp/scorpion:latest
 
     # or build it yourself.
-    apptainer build scorpion.sif Apptainer
+    sudo apptainer build scorpion.sif Apptainer.scorpion_2023
 
     # Then run recommended configuration (available via "scorpion" alias).
-    ./scorpion.sif --transform-task preprocess-h2 --alias scorpion PROBLEM_FILE
+    ./scorpion.sif DOMAIN_FILE PROBLEM_FILE PLAN_FILE TIME_LIMIT_SEC MEMORY_LIMIT_MB
 
 ### IPC 2018 version
 
