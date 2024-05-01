@@ -45,9 +45,12 @@ Stage: run
     DOMAINFILE="$1"
     PROBLEMFILE="$2"
     PLANFILE="$3"
+    TIMELIMIT="$4"
+    MEMORYLIMIT="$5"
 
     pypy3 /planner/fast-downward.py \
-        --overall-time-limit 30m \
+        --overall-time-limit "$TIMELIMIT" \
+        --overall-memory-limit "$MEMORYLIMIT" \
         --transform-task preprocess-h2 \
         --transform-task-options h2_time_limit,300 \
         --alias seq-opt-scorpion-2023 \
